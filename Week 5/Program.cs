@@ -8,7 +8,7 @@ class RuningCalc()
 {
     public static void Main(string[] args)
     {
-        Principal();
+        Principal(); // Program Running
     }
 }
 
@@ -18,13 +18,13 @@ namespace Menus
     {
         public static void Principal()
         {
-            List<string> UserOptions = new() {"1", "2", "3", "4"};
+            List<string> UserOptions = new() {"1", "2", "3", "4", "5"};
             string userchoice;
             while (true)
             {
                 WriteLine("=== OPTIONS ===\n1: Operations \n2: 2 \n3: 3 \n4: Exit\n=== ======= ===");
                 userchoice = ReadLine();
-                if (UserOptions.Contains(userchoice) == false)
+                if (UserOptions.Contains(userchoice) == false) //validation of options
                 {
                     WriteLine("=== OPTIONS ===\n1: 1 \n2: 2 \n3: 3 \n4: Exit \n=== ======= ===");
                     userchoice = ReadLine();
@@ -43,6 +43,10 @@ namespace Menus
                     {
                         Menu.ThirdOption();
                     }
+                    else if (userchoice == "4")
+                    {
+                        OperationsAndLogic.LogicaExpresiones();
+                    }
                     else
                     {
                         break;
@@ -56,7 +60,7 @@ namespace Menus
             string userchoice;
             WriteLine("=== OPTIONS ===\n1: Addition \n2: Substraction \n3: Division \n4: Multiplicacion \n5: Back \n=== ======= ===");
             userchoice = ReadLine();
-            if (UserOptions.Contains(userchoice) == false)
+            if (UserOptions.Contains(userchoice) == false) //validation of options
             {
                 WriteLine("=== OPTIONS ===\n1: Addition \n2: Substraction \n3: Division \n4: Multiplicacion \n5: Back \n=== ======= ===");
                 userchoice = ReadLine();
@@ -91,7 +95,7 @@ namespace Menus
             string userchoice;
             WriteLine("=== OPTIONS ===\n1: Addition \n2: Substraction \n3: Division \n4: Multiplicacion \n5: Back \n=== ======= ===");
             userchoice = ReadLine();
-            if (UserOptions.Contains(userchoice) == false)
+            if (UserOptions.Contains(userchoice) == false) //validation of options
             {
                 WriteLine("=== OPTIONS ===\n1: Power \n2: Square Root \n3: Cosine \n4: Sine \n5: Tangent \n=== ======= ===");
                 userchoice = ReadLine();
@@ -130,7 +134,7 @@ namespace Menus
             string userchoice;
             WriteLine("=== OPTIONS ===\n1: It is possitive? \n2: Are equal? \n3: between 0 to 100? \n4: Results \n5: Back \n=== ======= ===");
             userchoice = ReadLine();
-            if (UserOptions.Contains(userchoice) == false)
+            if (UserOptions.Contains(userchoice) == false) //validation of options
             {
                 WriteLine("=== OPTIONS ===\n1: It is possitive? \n2: Are equal? \n3: between 0 to 100? \n4: Results \n5: Back \n=== ======= ===");
                 userchoice = ReadLine();
@@ -164,12 +168,8 @@ namespace Menus
 
 namespace Operations
 {
-    class OperationsAndLogic
+    class OperationsAndLogic //The logic of each of the operations avaliable
     {
-        public static void Operation()
-        {
-
-        }
         public static void Suma()
         {
             WriteLine("Enter your first number: ");
@@ -274,19 +274,37 @@ namespace Operations
             }
             if (num1 < num2)
             {
-                WriteLine($"Is Less Than? {num1 < num2}");
+                WriteLine($"Is {num1} Less {num2} Than? {num1 < num2}");
             }
             else
             {
-                WriteLine($"Is Less Than? {num1 < num2}");
+                WriteLine($"Is {num1} Less {num2} Than? {num1 < num2}");
             }
             if (num1 > num2)
             {
-                WriteLine($"Is Greater Than? {num1 > num2}");
+                WriteLine($"Is {num1} Greater {num2} Than? {num1 > num2}");
             }
             else
             {
-                WriteLine($"Is Greater Than? {num1 > num2}");
+                WriteLine($"Is {num1} Greater {num2} Than? {num1 > num2}");
+            }
+            WriteLine("=== ======= ===");
+        }
+        public static void LogicaExpresiones()
+        {
+            WriteLine("Enter your expresion: ");
+            string expresion = ReadLine();
+            if (expresion.Contains('*') || expresion.Contains('/'))
+            {
+                Console.WriteLine("Multiplication or Division have the highest precendence");
+            }
+            else
+            {
+                Console.WriteLine("No multiplication or division found.");
+            }
+            if (expresion.Contains('+') || expresion.Contains('-'))
+            {
+                Console.WriteLine("Addition or substraction have the lowest precendence");
             }
         }
     }
