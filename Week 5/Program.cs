@@ -22,7 +22,7 @@ namespace Menus
             string userchoice;
             while (true)
             {
-                WriteLine("=== OPTIONS ===\n1: Operations \n2: 2 \n3: 3 \n4: Exit\n=== ======= ===");
+                WriteLine("=== OPTIONS ===\n1: Operations \n2: Complex Options \n3: Comparision of Numbers \n4: Logical Precedence \n5: Exit\n=== ======= ===");
                 userchoice = ReadLine();
                 if (UserOptions.Contains(userchoice) == false) //validation of options
                 {
@@ -93,7 +93,7 @@ namespace Menus
         {
             List<string> UserOptions = new() { "1", "2", "3", "4", "5", "6"};
             string userchoice;
-            WriteLine("=== OPTIONS ===\n1: Addition \n2: Substraction \n3: Division \n4: Multiplicacion \n5: Back \n=== ======= ===");
+            WriteLine("=== OPTIONS ===\n1: Power \n2: Square Root \n3: Cosine \n4: Sine \n5: Tangent \n=== ======= ===");
             userchoice = ReadLine();
             if (UserOptions.Contains(userchoice) == false) //validation of options
             {
